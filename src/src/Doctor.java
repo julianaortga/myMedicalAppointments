@@ -15,12 +15,13 @@ public class Doctor {
     String speciality;
     
     Doctor(){
-        System.out.println("Construyendo el objeto Doctor");
-        id++;
     }
     
-    Doctor(String name){
-        System.out.println("El nombre del doctor es: " + name);
+    Doctor(String name, String speciality){
+ 
+        this.name = name;
+        this.speciality= speciality;
+        id++;
     }
     //comportamientos
     public void showName(){
