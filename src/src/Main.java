@@ -19,7 +19,10 @@ public class Main {
         System.out.println(myDoctor.speciality);
     
     Patient patient = new Patient("Kevin","kevin@gmail.com");
-     
+    patient.setWeight(45.1);
+        System.out.println(patient.getWeigth());
+    patient.setPhoneNumber("12345678");
+        System.out.println(patient.getPhoneNumber());
     //showMenu();
     }
 }
