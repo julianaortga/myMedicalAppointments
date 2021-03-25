@@ -11,11 +11,14 @@ package src;
  */
 public class Patient {
     
-    public String name, email, address, phoneNumber, birthday, boold;
-    public double weight, height;
+    int id;
+    private String name, email, address, phoneNumber, birthday, boold;
+    private double weight, height;
     
     Patient(String name, String email){
-        
+        this.name = name;
+        this.email = email;
+        this.weight = 46.3;
     }
     
 }
