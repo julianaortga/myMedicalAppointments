@@ -26,9 +26,13 @@ public class Main {
             System.out.println(AvAp.getDate() + " - " + AvAp.getTime());
         }
     
-   /* Patient patient = new Patient("Kevin","kevin@gmail.com");
-    patient.setWeight(45.1);
-        System.out.println(patient.getWeigth());
+        System.out.println("");
+        System.out.println("");
+        Patient patient = new Patient("Kevin","kevin@gmail.com");
+        patient.setWeight(45.1);
+        System.out.println(patient);
+    
+    /*     System.out.println(patient.getWeigth());
     patient.setPhoneNumber("12345678");
         System.out.println(patient.getPhoneNumber());
     //showMenu();

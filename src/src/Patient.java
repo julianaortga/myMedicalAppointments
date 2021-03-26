@@ -11,7 +11,7 @@ package src;
  */
 public class Patient extends User {
     //Atributos
-    private String  birthday, boold;
+    private String  birthday, blood;
     private double weight, height;
     
     Patient(String name, String email){
@@ -42,12 +42,18 @@ public class Patient extends User {
         this.birthday = birthday;
     }
 
-    public String getBoold() {
-        return boold;
+    public String getBlood() {
+        return blood;
     }
 
-    public void setBoold(String boold) {
-        this.boold = boold;
+    public void setBlood(String blood) {
+        this.blood = blood;
     }   
-    
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nAge: " + birthday + "\nWeight: " + weight +
+                "\nHeight: " + height + "\nBlood: " + blood;
+    }
+         
 }
