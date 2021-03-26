@@ -9,15 +9,13 @@ package src;
  *
  * @author JulianaAndrea
  */
-public class Patient {
-    
-    int id;
-    private String name, email, address, phoneNumber, birthday, boold;
+public class Patient extends User {
+    //Atributos
+    private String  birthday, boold;
     private double weight, height;
     
     Patient(String name, String email){
-        this.name = name;
-        this.email = email;
+        super(name,email);
     }
     
     public void setWeight(double weight){
@@ -34,50 +32,6 @@ public class Patient {
 
     public void setHeight(double height) {
         this.height = height;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        if(phoneNumber.length() > 8){
-            System.out.println("El número telefónico debe ser máximo de 8 dígitos");
-        }else if (phoneNumber.length() == 8){
-        this.phoneNumber = phoneNumber;
-        }
     }
 
     public String getBirthday() {
