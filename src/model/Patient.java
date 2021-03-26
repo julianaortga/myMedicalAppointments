@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package src;
+package model;
 
 /**
  *
@@ -14,7 +14,7 @@ public class Patient extends User {
     private String  birthday, blood;
     private double weight, height;
     
-    Patient(String name, String email){
+    public Patient(String name, String email){
         super(name,email);
     }
     

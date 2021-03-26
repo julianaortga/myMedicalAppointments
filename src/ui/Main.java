@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package src;
+package ui;
 import java.util.Date;
-import static src.ui.UIMenu.*;
+import model.Doctor;
+import model.Patient;
 
 /**
  *
