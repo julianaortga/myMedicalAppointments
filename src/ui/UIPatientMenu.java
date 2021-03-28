@@ -22,7 +22,7 @@ public class UIPatientMenu {
         do{
             System.out.println("\n\n");
             System.out.println("Patient");
-            System.out.println("Welcome: " + UIMenu.patientLogged);
+            System.out.println("Welcome: " + UIMenu.patientLogged.getName());
             System.out.println("1. Book an appointment");
             System.out.println("2. My Appointment");
             System.out.println("0. Logout");
@@ -35,6 +35,7 @@ public class UIPatientMenu {
                     showBookAppointmentMenu();
                     break;
                 case 2:
+                    showPatientMyAppointment();
                     break;
                 case 0:
                     UIMenu.showMenu();
@@ -65,7 +66,7 @@ public class UIPatientMenu {
                         = UIDoctorMenu.doctorsAvailableAppointments.get(i).getAvailableApointment();
                 Map<Integer,Doctor> doctorAppointment = new TreeMap<>();
                 
-                for (int j = 0; availableAppointments.size() < 10; j++) {
+                for (int j = 0; j < availableAppointments.size(); j++) {
                     k++;
                     System.out.println(k + ". " + availableAppointments.get(j).getDate());
                     doctorAppointment.put(Integer.valueOf(j), UIDoctorMenu.doctorsAvailableAppointments.get(i));
