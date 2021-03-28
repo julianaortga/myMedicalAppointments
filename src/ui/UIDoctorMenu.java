@@ -5,13 +5,17 @@
  */
 package ui;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import model.Doctor;
 
 /**
  *
  * @author JulianaAndrea
  */
 public class UIDoctorMenu {
+    
+    public static ArrayList<Doctor> doctorsAvailableAppointments = new ArrayList<>();   
     
     public static void showDoctorMenu(){
         
@@ -69,6 +73,23 @@ public class UIDoctorMenu {
                 
                 System.out.println("Your date is: " + date + "\n1. Correct \n2. Change date");
                 
+                int responseDate = Integer.valueOf(sc.nextLine());
+                if(responseDate == 2)continue;//No se sale del siglo, vuelve a iniciar desde donde se quedo
+                
+                int responseTime = 0;
+                String time = "";
+                
+                do{
+                    System.out.println("Insert the time available for date: " +  date);
+                    time = sc.nextLine();
+                    
+                    System.out.println("Your time is: " + time + "\n1. Correct \n2. Change time");
+                    responseTime = Integer.valueOf(sc.nextLine());
+                    
+                }while(response == 2);
+                
+                UIMenu.doctorLogged.addAvailableAppointment(date, time);
+                checkDoctorAvailableAppointments(UIMenu.doctorLogged);
                 
             }else if (response == 0){
             showDoctorMenu();
@@ -77,4 +98,10 @@ public class UIDoctorMenu {
         }while(response!=0);
     }
     
+    private static void checkDoctorAvailableAppointments(Doctor doctor){
+        
+        if(doctor.getAvailableApointment().size()> 0 && !doctorsAvailableAppointments.contains(doctor)){
+            doctorsAvailableAppointments.add(doctor);
+        }
+    }
 }
