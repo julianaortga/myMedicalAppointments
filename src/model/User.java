@@ -9,7 +9,7 @@ package model;
  *
  * @author JulianaAndrea
  */
-public class User {
+public abstract class User {
     private int id;
     private String name, email, address, phoneNumber;
 
@@ -68,7 +68,8 @@ public class User {
                 "\nAddress: " + address + ". Phone: " + phoneNumber ;
     }        
     
-    
+    //método abstracto
+    public abstract void showDataUser();
    
     
 }
