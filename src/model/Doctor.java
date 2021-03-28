@@ -21,9 +21,8 @@ public class Doctor extends User{
     private ArrayList<AvailableAppointment> availableApointments = new ArrayList<>();
     private String speciality;
         
-    /*Doctor(){
-    }*/
-    
+   // public Doctor(){
+    //}
    public Doctor(String name, String email){
         super(name,email);
     }

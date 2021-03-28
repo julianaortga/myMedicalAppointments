@@ -5,14 +5,40 @@
  */
 package model;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  *
  * @author JulianaAndrea
  */
 public class Patient extends User {
     //Atributos
+    private ArrayList<AppointmentDoctor> appointmentDoctors = new ArrayList<>();
+    private ArrayList<AppointmentNurse> appointmentNurse = new ArrayList<>();
+    
     private String  birthday, blood;
     private double weight, height;
+
+    public ArrayList<AppointmentDoctor> getAppointmentDoctors() {
+        return appointmentDoctors;
+    }
+
+    public void addAppointmentDoctors(Doctor doctor, Date date, String time) {
+        AppointmentDoctor appointmentDoctor = new AppointmentDoctor(this, doctor);
+        appointmentDoctor.schedule(date, time);
+        appointmentDoctors.add(appointmentDoctor);
+    }
+
+    public ArrayList<AppointmentNurse> getAppointmentNurse() {
+        return appointmentNurse;
+    }
+
+    public void setAppointmentNurse(ArrayList<AppointmentNurse> appointmentNurse) {
+        this.appointmentNurse = appointmentNurse;
+    }
+    
+    
     
     public Patient(String name, String email){
         super(name,email);

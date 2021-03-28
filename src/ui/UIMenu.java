@@ -89,7 +89,7 @@ public class UIMenu {
                   if(pat.getEmail().equals(email)){
                       emailCorrect = true;
                       patientLogged = pat;
-                      showPatientMenu();
+                      UIPatientMenu.showPatientMenu();
                   }
               }
           }

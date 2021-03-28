@@ -32,7 +32,7 @@ public class UIPatientMenu {
 
             switch(response){
                 case 1:
-                    
+                    showBookAppointmentMenu();
                     break;
                 case 2:
                     break;
@@ -77,7 +77,54 @@ public class UIPatientMenu {
             Scanner sc = new Scanner(System.in);
             int responseDateSelected = Integer.parseInt(sc.nextLine());
             
+            Map<Integer,Doctor> doctorAvailableSelected = doctors.get(responseDateSelected);
+            Integer indexDate = 0;
+            Doctor doctorSelected = new Doctor("","");
             
+            //Obtener los datos confirmados
+            for (Map.Entry<Integer, Doctor> doc : doctorAvailableSelected.entrySet()) {
+                indexDate = doc.getKey();
+                doctorSelected = doc.getValue();
+            }
+            
+            System.out.println(doctorSelected.getName() 
+                    + ". Date: "
+                    + doctorSelected.getAvailableApointment().get(indexDate).getDate()
+                    + ".  Time: " 
+                    + doctorSelected.getAvailableApointment().get(indexDate).getTime());
+        
+            //Confirmar respuesta        
+            System.out.println("Confirm your appointment: \n1. Yes \n2. Change Data");
+            response = Integer.valueOf(sc.nextLine());
+            
+            if(response == 1){
+                UIMenu.patientLogged.addAppointmentDoctors(doctorSelected, 
+                        doctorSelected.getAvailableApointment().get(indexDate).getDate(null), 
+                        doctorSelected.getAvailableApointment().get(indexDate).getTime());
+                showPatientMenu();
+            }
+        }while(response!=0);
+    }
+
+    private static void showPatientMyAppointment(){
+        int response = 0;
+        
+        do{
+            System.out.println("::My Appointments::");
+            if(UIMenu.patientLogged.getAppointmentDoctors().size()==0){
+                System.out.println("Don't have appointments");
+                break;
+            }
+            
+            for(int i = 0; i < UIMenu.patientLogged.getAppointmentDoctors().size();i++){
+              int j = i+1;
+                System.out.println(j +". " +
+                       "Date: " + UIMenu.patientLogged.getAppointmentDoctors().get(i).getDate()+
+                       "Time: " + UIMenu.patientLogged.getAppointmentDoctors().get(i).getTime()+
+                       "\nDoctor: " + UIMenu.patientLogged.getAppointmentDoctors().get(i).getDoctor().getName());
+            }
+            
+            System.out.println("0. Return");
         }while(response!=0);
     }
 }
