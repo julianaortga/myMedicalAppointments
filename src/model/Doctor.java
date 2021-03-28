@@ -18,6 +18,7 @@ import java.util.logging.Logger;
  */
 public class Doctor extends User{
     //Atributo
+    private ArrayList<AvailableAppointment> availableApointments = new ArrayList<>();
     private String speciality;
         
     /*Doctor(){
@@ -25,7 +26,6 @@ public class Doctor extends User{
     
    public Doctor(String name, String email){
         super(name,email);
-        this.speciality = speciality;
     }
 
     public String getSpeciality() {
@@ -84,11 +84,11 @@ public class Doctor extends User{
             this.id = id;
         }
 
-        public Date getDate() {
-            return date;
+        public Date getDate(String date) {
+            return this.date;
         }
         
-        public String getDate(String date){
+        public String getDate(){
             return format.format(date);
         }
 
