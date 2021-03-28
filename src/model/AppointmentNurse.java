@@ -6,8 +6,6 @@
 package model;
 
 import java.util.Date;
-import ui.ISchedulable;
-
 /**
  *
  * @author JulianaAndrea
